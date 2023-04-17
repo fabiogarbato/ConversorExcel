@@ -1,5 +1,7 @@
-from gui import GUI
+from menu_principal import MenuPrincipal
 
-if __name__ == '__main__':
-    gui = GUI()
-    gui.start()
+# Cria a interface do menu principal
+menu_principal = MenuPrincipal()
+
+# Inicia o loop da interface gráfica
+menu_principal.iniciar()
