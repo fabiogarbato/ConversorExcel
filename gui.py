@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox
 from conversor import converter_xlsx_para_csv
+from menu_principal import MenuPrincipal
 
 class Gui:
     def __init__(self):
@@ -19,6 +20,10 @@ class Gui:
         self.select_button = tk.Button(self.root, text="Selecionar arquivo", command=self.select_file)
         self.select_button.pack(pady=20)
 
+        # Criar botão para voltar para o menu principal
+        self.menu_button = tk.Button(self.root, text="Voltar para o menu principal", command=self.voltar_menu)
+        self.menu_button.pack(pady=10)
+
     # Função para selecionar o arquivo XLSX
     def select_file(self):
         xlsx_path = filedialog.askopenfilename(title="Selecione o arquivo XLSX", filetypes=[("Arquivos XLSX", "*.xlsx")])
@@ -30,3 +35,8 @@ class Gui:
     def iniciar(self):
         # Iniciar a janela principal
         self.root.mainloop()
+    
+    # Função para abrir a tela de conversão
+    def voltar_menu(self):
+        self.root.withdraw()
+        self.menu_principal = MenuPrincipal()

@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import messagebox
-from gui import Gui
 
 class MenuPrincipal:
     def __init__(self):
@@ -22,7 +21,10 @@ class MenuPrincipal:
 
     # Função para abrir a tela de conversão
     def abrir_gui(self):
+        from gui import Gui
+        self.root.withdraw()  # Esconde a janela do Menu Principal
         self.gui = Gui()
+        #self.root.deiconify()  # Torna a janela do Menu Principal visível novamente
 
     # Função para sair do programa
     def sair(self):
