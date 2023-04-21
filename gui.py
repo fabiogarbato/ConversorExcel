@@ -10,8 +10,21 @@ class Gui:
 
         # Configurar a janela
         self.root.title("Conversor de XLSX para CSV")
-        self.root.geometry("400x200")
-        self.root.configure(background="#ADD8E6")
+           # Definir a largura e altura da janela
+        largura = 400
+        altura = 300
+
+        # Obter a largura e altura da tela
+        largura_tela = self.root.winfo_screenwidth()
+        altura_tela = self.root.winfo_screenheight()
+
+        # Calcular a posição x e y da janela para centralizá-la na tela
+        x = (largura_tela / 2) - (largura / 2)
+        y = (altura_tela / 2) - (altura / 2)
+
+        # Definir a posição da janela
+        self.root.geometry("%dx%d+%d+%d" % (largura, altura, x, y))
+        self.root.configure(background="#ADD8E6")  # Definir a cor de fundo
 
         # Criar a label com o título em negrito
         self.title_label = tk.Label(self.root, text="Conversor de XLSX para CSV", font=("Helvetica", 16, "bold"), bg="#ADD8E6")
