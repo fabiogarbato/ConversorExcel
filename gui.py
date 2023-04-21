@@ -11,17 +11,18 @@ class Gui:
         # Configurar a janela
         self.root.title("Conversor de XLSX para CSV")
         self.root.geometry("400x200")
+        self.root.configure(background="#ADD8E6")
 
         # Criar a label com o título em negrito
-        self.title_label = tk.Label(self.root, text="Conversor de XLSX para CSV", font=("Helvetica", 16, "bold"))
+        self.title_label = tk.Label(self.root, text="Conversor de XLSX para CSV", font=("Helvetica", 16, "bold"), bg="#ADD8E6")
         self.title_label.pack(pady=10)
 
         # Criar botão para selecionar o arquivo
-        self.select_button = tk.Button(self.root, text="Selecionar arquivo", command=self.select_file)
+        self.select_button = tk.Button(self.root, text="Selecionar arquivo", command=self.select_file, borderwidth=5, relief="ridge", padx=10, pady=5, bd=2, bg="White", fg="black", font=("Helvetica", 12), activebackground="#5dade2")
         self.select_button.pack(pady=20)
 
         # Criar botão para voltar para o menu principal
-        self.menu_button = tk.Button(self.root, text="Voltar para o menu principal", command=self.voltar_menu)
+        self.menu_button = tk.Button(self.root, text="Voltar para o menu principal", command=self.voltar_menu, borderwidth=5, relief="ridge", padx=10, pady=5, bd=2, bg="White", fg="black", font=("Helvetica", 12), activebackground="#5dade2")
         self.menu_button.pack(pady=10)
 
     # Função para selecionar o arquivo XLSX
